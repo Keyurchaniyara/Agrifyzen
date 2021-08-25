@@ -13,7 +13,7 @@ gevent-websocket==0.10.1
 greenlet==1.1.0
 itsdangerous==2.0.1
 Jinja2==3.0.1
-joblib @ file:///tmp/build/80754af9/joblib_1613502643832/work
+joblib==0.17.0
 MarkupSafe==2.0.1
 numpy==1.21.0
 pandas==1.3.0
