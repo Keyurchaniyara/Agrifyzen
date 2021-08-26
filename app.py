@@ -5,7 +5,6 @@ Created on Mon Jul  5 20:39:31 2021
 @author: Keyur Chaniyara
 """
 
-app = Flask(__name__)
 # from crop import predict
 from flask import Flask, redirect, url_for, render_template, request, flash
 import pandas as pd
@@ -15,6 +14,7 @@ import numpy as np
 import joblib
 # from sklearn.ensemble import RandomForestClassifier
 
+app = Flask(__name__)
 yields = pd.read_csv("data Processed\clean_yield_prediction.csv")
 modelyield = pickle.load(open("models\YieldDecisionTree.pkl","rb"))
 state_model=joblib.load('models\State_le.joblib',mmap_mode = 'r')
