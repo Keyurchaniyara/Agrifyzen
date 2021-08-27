@@ -5,14 +5,14 @@ Created on Mon Jul  5 20:39:31 2021
 @author: Keyur Chaniyara
 """
 
-# from crop import predict
-from flask import Flask, redirect, url_for, render_template, request, flash
+from flask import Flask, redirect, url_for,flash
+
+app = Flask(__name__)
+from flask import render_template, request
 import pandas as pd
 import pickle
 import numpy as np
-# from jinja2 import Template
 import joblib
-# from sklearn.ensemble import RandomForestClassifier
 
 yields = pd.read_csv("data Processed\clean_yield_prediction.csv")
 modelyield = pickle.load(open("models\YieldDecisionTree.pkl","rb"))
@@ -24,8 +24,6 @@ crop = pd.read_csv("data Processed\crop_recommendation.csv")
 modelcrop = pickle.load(open("models\CropRandomForest.pkl","rb"))
 fert = pd.read_csv("data Processed\clean_fertilizer_prediction.csv")
 modelfertilizer = pickle.load(open("models\FertRandomForest.pkl","rb"))
-
-app = Flask(__name__)
 
 @app.route('/')
 def index1():
