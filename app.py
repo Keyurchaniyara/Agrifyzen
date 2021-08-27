@@ -14,7 +14,6 @@ import numpy as np
 import joblib
 # from sklearn.ensemble import RandomForestClassifier
 
-app = Flask(__name__)
 yields = pd.read_csv("data Processed\clean_yield_prediction.csv")
 modelyield = pickle.load(open("models\YieldDecisionTree.pkl","rb"))
 state_model=joblib.load('models\State_le.joblib',mmap_mode = 'r')
@@ -25,6 +24,8 @@ crop = pd.read_csv("data Processed\crop_recommendation.csv")
 modelcrop = pickle.load(open("models\CropRandomForest.pkl","rb"))
 fert = pd.read_csv("data Processed\clean_fertilizer_prediction.csv")
 modelfertilizer = pickle.load(open("models\FertRandomForest.pkl","rb"))
+
+app = Flask(__name__)
 
 @app.route('/')
 def index1():
