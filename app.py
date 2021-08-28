@@ -14,16 +14,16 @@ import pickle
 import numpy as np
 import joblib
 
-yields = pd.read_csv("Agrifyzen\data Processed\clean_yield_prediction.csv")
-modelyield = pickle.load(open("Agrifyzen\models\YieldDecisionTree.pkl","rb"))
-state_model=joblib.load('Agrifyzen\models\State_le.joblib',mmap_mode = 'r')
-District_model=joblib.load("Agrifyzen\models\District_le.joblib",mmap_mode = 'r')
-Crop_model=joblib.load("Agrifyzen\models\Crop_le.joblib",mmap_mode = 'r')
-Season_model=joblib.load('Agrifyzen\models\Season_le.joblib',mmap_mode = 'r')
-crop = pd.read_csv("Agrifyzen\data Processed\crop_recommendation.csv")
-modelcrop = pickle.load(open("Agrifyzen\models\CropRandomForest.pkl","rb"))
-fert = pd.read_csv("Agrifyzen\data Processed\clean_fertilizer_prediction.csv")
-modelfertilizer = pickle.load(open("Agrifyzen\models\FertRandomForest.pkl","rb"))
+yields = pd.read_csv("data Processed\clean_yield_prediction.csv")
+modelyield = pickle.load(open("models\YieldDecisionTree.pkl","rb"))
+state_model=joblib.load('models\State_le.joblib',mmap_mode = 'r')
+District_model=joblib.load("models\District_le.joblib",mmap_mode = 'r')
+Crop_model=joblib.load("models\Crop_le.joblib",mmap_mode = 'r')
+Season_model=joblib.load('models\Season_le.joblib',mmap_mode = 'r')
+crop = pd.read_csv("data Processed\crop_recommendation.csv")
+modelcrop = pickle.load(open("models\CropRandomForest.pkl","rb"))
+fert = pd.read_csv("data Processed\clean_fertilizer_prediction.csv")
+modelfertilizer = pickle.load(open("models\FertRandomForest.pkl","rb"))
 
 @app.route('/')
 def index1():
